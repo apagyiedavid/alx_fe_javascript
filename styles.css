@@ -1,31 +1,71 @@
+/* ===========================
+   Base Styles
+   =========================== */
 body {
+  margin: 0;
+  padding: 0;
   font-family: Arial, sans-serif;
-  padding: 20px;
+  line-height: 1.5;
+  background-color: #fafafa;
+  color: #333;
   display: flex;
   justify-content: center;
+  padding: 20px;
 }
 
 .container {
-  max-width: 600px;
   width: 100%;
+  max-width: 1000px;
+  background-color: #fff;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  box-sizing: border-box;
 }
 
-.quote-display {
-  margin: 20px 0;
-  padding: 15px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  background: #f9f9f9;
+h1, h2 {
+  margin-top: 0;
+}
+
+.filter-section,
+.add-quote-form,
+.quote-display,
+.feedback {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.select,
+input[type="text"],
+button,
+select {
+  font-size: 16px;
+}
+
+input[type="text"],
+select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
 
 button {
+  cursor: pointer;
   padding: 10px 15px;
   font-size: 16px;
-  cursor: pointer;
   border: none;
   border-radius: 4px;
   background-color: #007BFF;
   color: white;
+  transition: opacity 0.2s ease-in-out;
 }
 
 button:hover,
@@ -33,25 +73,47 @@ button:active {
   opacity: 0.9;
 }
 
-input[type="text"] {
-  width: calc(100% - 22px);
-  padding: 10px;
+a {
+  color: #007BFF;
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
+
+a:hover,
+a:active {
+  color: #FF6565;
+}
+
+/* Quote display styling */
+.quote-display {
+  padding: 15px;
+  background-color: #f9f9f9;
+  border: 1px solid #eee;
+  border-radius: 4px;
+}
+
+.quote-display p {
   margin: 5px 0;
-  box-sizing: border-box;
 }
 
 .feedback {
-  margin-top: 10px;
-  color: green;
+  font-size: 14px;
+  min-height: 1em;
 }
 
+/* ===========================
+   Responsive & Mobile Styles
+   =========================== */
 @media screen and (max-width: 480px) {
-  .container {
+  body {
     padding: 10px;
+  }
+  
+  .container {
+    padding: 15px;
   }
 
   button {
     width: 100%;
-    font-size: 18px;
   }
 }

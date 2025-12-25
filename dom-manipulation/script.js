@@ -80,7 +80,7 @@ function addQuote() {
         categoryInput.value = '';
         
         populateCategories();
-        syncQuotes(); // Step 2: Push to server
+        syncQuotes(); // Triggers the POST request with headers
         alert("Quote added!");
     }
 }
@@ -104,12 +104,15 @@ async function fetchQuotesFromServer() {
     }
 }
 
+// Updated syncQuotes with the specific Content-Type header
 async function syncQuotes() {
     try {
         const response = await fetch(SERVER_URL, {
             method: 'POST',
             body: JSON.stringify(quotes),
-            headers: { 'Content-type': 'application/json; charset=UTF-8' },
+            headers: { 
+                'Content-Type': 'application/json; charset=UTF-8' 
+            },
         });
         
         if (response.ok) {
